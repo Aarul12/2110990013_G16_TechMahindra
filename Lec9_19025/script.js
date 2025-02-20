@@ -64,8 +64,59 @@
 //     }
 // }
 
+// createOrder(Cadt,callback){
+//     console.log("ORDER CREATION")
+//     orderPayment(orderd, callback){
+//         console.log("ORDER PAYMENT")
+//         orderPayment(orderd, callback){
+//             console.log("ORDER PAYMENT")
+//         }
+//     }
+// }
 
-const gutHubData = fetch("https://");
-setTimeout()=>{
-    console.log(githubData)
+const cart = ["shoes", "clothes" , "serum", "bag"]
+function createOrder(cart){
+    const myPromise = new Promise(function(resolve, reject){
+        if(cart.length>0){
+            resolve("12345")
+        }
+        else{
+            const err = new Error("ERROR FAILED")
+            reject(err.message);
+        }
+    });
+    return myPromise;
 }
+function orderPayment(orderId){
+    console.log("ORder Payment Successfull", orderId);
+}
+function orderSummary(orderId){
+    console.log("ORder Summary Created", orderId);
+}
+function updateWallet(){
+    console.log("wallet updated");
+}
+
+
+createOrder(cart)
+.then(function(orderId){
+    return orderPayment(orderId)
+})
+.then(function(orderId){
+    return orderSummary(orderId)
+})
+.then(function(){
+    return updateWallet()
+})
+
+createOrder(cart)
+// .then(function orderPayment(orderId){
+//     console.log("ORDER PLACEd SUCCESSFUL", orderId)
+// })
+// .then(function orderSummary(orderId){
+//     console.log("ORDER Summary", orderId)
+// })
+// // .then(orderPayment(orderId))
+// // .then(orderSummary(orderId))
+// // .then(updateWallet)
+
